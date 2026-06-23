@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DF-project5"
+		},
+		"ls_azuresql_connectionString": {
+			"value": ""
+		},
+		"ls_onpremtocloud_connectionString": {
+			"value": "integrated security=True;Data Source=DESKTOP-26BD9D2;Initial Catalog=TEST_DB_SUPPLYCHAIN"
+		},
+		"ls_onpremtocloud_password": {
+			"value": ""
+		},
+		"ls_sinkoncloud_accountKey": {
+			"value": ""
+		},
+		"ls_onpremtocloud_properties_typeProperties_userName": {
+			"value": "DESKTOP-26BD9D2\\MADHU"
+		},
+		"ls_sinkoncloud_properties_typeProperties_url": {
+			"value": "https://saproject5.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

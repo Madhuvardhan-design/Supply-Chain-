@@ -1,0 +1,85 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DF-project5"
+		},
+		"ls_azuresql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_azuresql'"
+		},
+		"ls_onpremtocloud_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_onpremtocloud'",
+			"defaultValue": "integrated security=True;Data Source=DESKTOP-26BD9D2;Initial Catalog=TEST_DB_SUPPLYCHAIN"
+		},
+		"ls_onpremtocloud_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_onpremtocloud'"
+		},
+		"ls_sinkoncloud_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_sinkoncloud'"
+		},
+		"ls_onpremtocloud_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "DESKTOP-26BD9D2\\MADHU"
+		},
+		"ls_sinkoncloud_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://saproject5.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DF-project5_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_azuresql_connectionString": {
+						"value": "[parameters('ls_azuresql_connectionString')]"
+					},
+					"ls_sinkoncloud_accountKey": {
+						"value": "[parameters('ls_sinkoncloud_accountKey')]"
+					},
+					"ls_onpremtocloud_connectionString": {
+						"value": "[parameters('ls_onpremtocloud_connectionString')]"
+					},
+					"ls_onpremtocloud_password": {
+						"value": "[parameters('ls_onpremtocloud_password')]"
+					},
+					"ls_sinkoncloud_properties_typeProperties_url": {
+						"value": "[parameters('ls_sinkoncloud_properties_typeProperties_url')]"
+					},
+					"ls_onpremtocloud_properties_typeProperties_userName": {
+						"value": "[parameters('ls_onpremtocloud_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
