@@ -1,0 +1,17 @@
+{
+	"name": "ls_onpremtocloud",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DESKTOP-26BD9D2;initial catalog=TEST_DB_SUPPLYCHAIN",
+			"userName": "DESKTOP-26BD9D2\\MADHU",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhNzAxZWZlMC02MzRkLTRlOTUtYTE5MC05ZmVmNDMzN2FkMmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "ir-onpremtocloud",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

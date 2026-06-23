@@ -1,0 +1,23 @@
+{
+	"name": "ds_onprem5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_onpremtocloud",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Source_Object_Schema": {
+				"type": "string",
+				"defaultValue": "@item().Source_Object_Schema"
+			},
+			"Source_Object_Name": {
+				"type": "string",
+				"defaultValue": "@item().Source_Object_Schema"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

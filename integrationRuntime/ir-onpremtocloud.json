@@ -1,0 +1,6 @@
+{
+	"name": "ir-onpremtocloud",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
